@@ -59,7 +59,6 @@ io.on('connection', function(socket){
             usernames.splice(usernames.indexOf(socket.username), 1);
             io.emit('userChange', usernames);
             console.log("Disconnected: " + usernames[usernames.indexOf(socket.username)]);
-            console.log(usernames);
         }
     });
 
