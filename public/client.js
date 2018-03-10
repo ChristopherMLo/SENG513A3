@@ -22,7 +22,8 @@ function init() {
         else {
             $('#messages').append($('<li>' + time + ' ' + usr.fontcolor(color) + ': ' + msg + '</li>'));
         }
-        window.scrollTo(0, document.body.scrollHeight);
+        let element = document.getElementById('messages');
+        element.scrollTop = element.scrollHeight;
     });
 
     // On name change of client
@@ -51,6 +52,9 @@ function init() {
         for (let i in history) {
             $('#messages').append($('<li>' + history[i] + '</li>'));
         }
+        $('#messages').append($('<li>' + 'Welcome ' + username + '!</li>'));
+        let element = document.getElementById('messages');
+        element.scrollTop = element.scrollHeight;
     })
 
     socket.emit('newConnection');

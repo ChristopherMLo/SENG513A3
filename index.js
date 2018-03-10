@@ -77,7 +77,6 @@ io.on('connection', function(socket){
         io.emit('userChange', usernames); //Tell all connected users username list has changed
         socket.emit('chatHistory', messageHistory); //Send new client message history
         console.log("Connected: " + socket.username);
-        console.log(usernames);
     });
 
 });
